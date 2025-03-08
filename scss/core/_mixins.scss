@@ -1,0 +1,366 @@
+@mixin font-face($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url('#{$font-path}/#{$file_name}.eot') format('eot'),
+		url('#{$font-path}/#{$file_name}.woff') format('woff'),
+		url('#{$font-path}/#{$file_name}.woff2') format('woff2'),
+		url('#{$font-path}/#{$file_name}.ttf') format('truetype');
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+// -----------------------------------------------------------------------------
+@mixin _screen-1710 {
+	@media screen and (max-width: 1710px) {
+		@content;
+	}
+}
+
+@mixin _screen-1640 {
+	@media screen and (max-width: 1640px) {
+		@content;
+	}
+}
+
+@mixin _screen-1164 {
+	@media screen and (max-width: 1164px) {
+		@content;
+	}
+}
+
+@mixin _screen-1440 {
+	@media screen and (max-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin _screen-1300 {
+	@media screen and (max-width: 1300px) {
+		@content;
+	}
+}
+
+@mixin _screen-1220 {
+	@media screen and (max-width: 1220px) {
+		@content;
+	}
+}
+
+@mixin _screen-1140 {
+	@media screen and (max-width: 1140px) {
+		@content;
+	}
+}
+
+@mixin _screen-1110 {
+	@media screen and (max-width: 1110px) {
+		@content;
+	}
+}
+
+@mixin _screen-1024 {
+	@media screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin _screen-960 {
+	@media screen and (max-width: 960px) {
+		@content;
+	}
+}
+
+@mixin _screen-920 {
+	@media screen and (max-width: 920px) {
+		@content;
+	}
+}
+
+@mixin _screen-890 {
+	@media screen and (max-width: 890px) {
+		@content;
+	}
+}
+
+@mixin _screen-768 {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin _screen-690 {
+	@media screen and (max-width: 690px) {
+		@content;
+	}
+}
+
+@mixin _screen-605 {
+	@media screen and (max-width: 605px) {
+		@content;
+	}
+}
+
+@mixin _screen-640 {
+	@media screen and (max-width: 640px) {
+		@content;
+	}
+}
+
+@mixin _screen-568 {
+	@media screen and (max-width: 568px) {
+		@content;
+	}
+}
+
+@mixin _screen-490 {
+	@media screen and (max-width: 490px) {
+		@content;
+	}
+}
+
+@mixin _screen-425 {
+	@media screen and (max-width: 425px) {
+		@content;
+	}
+}
+
+@mixin _screen-375 {
+	@media screen and (max-width: 375px) {
+		@content;
+	}
+}
+
+@mixin _screen-320 {
+	@media screen and (max-width: 320px) {
+		@content;
+	}
+}
+
+// -----------------------------------------------------------------------------
+@mixin _min-1920 {
+	@media (min-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin _min-1710 {
+	@media (min-width: 1710.99px) {
+		@content;
+	}
+}
+
+@mixin _min-1640 {
+	@media (min-width: 1640.99px) {
+		@content;
+	}
+}
+
+@mixin _min-1440 {
+	@media (min-width: 1440.99px) {
+		@content;
+	}
+}
+
+@mixin _min-1220 {
+	@media (min-width: 1220.99px) {
+		@content;
+	}
+}
+
+@mixin _min-1140 {
+	@media (min-width: 1140.99px) {
+		@content;
+	}
+}
+
+@mixin _min-1140 {
+	@media (min-width: 1140.99px) {
+		@content;
+	}
+}
+
+@mixin _min-1024 {
+	@media (min-width: 1024.99px) {
+		@content;
+	}
+}
+
+@mixin _min-960 {
+	@media (min-width: 960.99px) {
+		@content;
+	}
+}
+
+@mixin _min-920 {
+	@media (min-width: 920.99px) {
+		@content;
+	}
+}
+
+@mixin _min-768 {
+	@media (min-width: 768.98px) {
+		@content;
+	}
+}
+
+@mixin _min-690 {
+	@media (min-width: 690.98px) {
+		@content;
+	}
+}
+
+@mixin _min-490 {
+	@media (min-width: 490.99px) {
+		@content;
+	}
+}
+
+@mixin _min-425 {
+	@media (min-width: 425.99px) {
+		@content;
+	}
+}
+
+@mixin _min-375 {
+	@media (min-width: 375.99px) {
+		@content;
+	}
+}
+
+@mixin _min-320 {
+	@media (min-width: 320.99px) {
+		@content;
+	}
+}
+
+// -----------------------------------------------------------------------------
+@mixin _1440-1920 {
+	@media (min-width: 1440.98px) and (max-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin _1140-1920 {
+	@media (min-width: 1140.98px) and (max-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin _960-1920 {
+	@media (min-width: 960.98px) and (max-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin _768-1920 {
+	@media (min-width: 768.98px) and (max-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin _960-1440 {
+	@media (min-width: 960.98px) and (max-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin _320-1220 {
+	@media (min-width: 320.99px) and (max-width: 1220px) {
+		@content;
+	}
+}
+
+@mixin _690-1440 {
+	@media (min-width: 690.98px) and (max-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin _490-1920 {
+	@media (min-width: 490.98px) and (max-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin _320-1920 {
+	@media (min-width: 320.98px) and (max-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin _375-1440 {
+	@media (min-width: 375.98px) and (max-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin _320-1440 {
+	@media (min-width: 320.98px) and (max-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin _320-490 {
+	@media (min-width: 320.98px) and (max-width: 490px) {
+		@content;
+	}
+}
+
+@mixin _1440-1740 {
+	@media (min-width: 1440.98px) and (max-width: 1740px) {
+		@content;
+	}
+}
+
+@mixin _640-1710 {
+	@media (min-width: 640.98px) and (max-width: 1710px) {
+		@content;
+	}
+}
+
+@mixin _320-1140 {
+	@media (min-width: 320.98px) and (max-width: 1140px) {
+		@content;
+	}
+}
+
+@mixin _320-960 {
+	@media (min-width: 320.98px) and (max-width: 960px) {
+		@content;
+	}
+}
+
+@mixin _490-690 {
+	@media (min-width: 490.98px) and (max-width: 690px) {
+		@content;
+	}
+}
+
+@mixin _490-640 {
+	@media (min-width: 490.98px) and (max-width: 640px) {
+		@content;
+	}
+}
+
+// -----------------------------------------------------------------------------
+@mixin _1024 {
+	@container (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin add-class-on-hover($selector, $class) {
+	#{$selector} {
+		position: relative;
+		overflow: hidden;
+
+		&:hover {
+			&.#{$class} {
+				// Стили для состояния наведения с классом
+				@content;
+			}
+		}
+	}
+}

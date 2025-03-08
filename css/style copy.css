@@ -1,0 +1,54 @@
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.page__section {
+  position: relative;
+  width: 100%;
+  height: 780px;
+}
+.page__wave-container {
+  bottom: 0;
+  margin: 0;
+  padding: 0 0 45px;
+  position: absolute;
+  width: 100%;
+}
+.page__wave-container .canvas {
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: inline-block;
+  -webkit-user-drag: none;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.wave-container__link {
+  left: -50%;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  bottom: 0;
+  font-family: "GT-Haptik-Bold", sans-serif;
+  font-size: 12px;
+  opacity: 1;
+  padding-bottom: 55px;
+  position: absolute;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-property: color;
+  transition-property: color;
+  z-index: 10;
+  color: blueviolet;
+}/*# sourceMappingURL=style copy.css.map */

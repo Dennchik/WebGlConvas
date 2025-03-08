@@ -1,0 +1,106 @@
+// todo -------------------------- Variables -----------------------------------
+@import 'core/variables';
+//todo ----------------------------- Core --------------------------------------
+@import 'core/mixins';
+@import 'core/extend';
+@import 'core/reset';
+// -----------------------------------------------------------------------------
+// #region
+.wrapper {
+	display: flex;
+	// flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	height: 100%;
+}
+
+[class*='_container'] {
+	max-width: $maxWidthContainer;
+	padding: 0 15px;
+	margin: 0 auto;
+	height: 100%;
+	box-sizing: content-box;
+}
+
+[class*='icon-'] {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateX(0.5px);
+
+	&::before {
+		pointer-events: none;
+	}
+}
+
+[class*='icon-arrow-'] {
+	&::before {
+		font-size: 2.4rem;
+
+		@include _1440-1920 {
+			font-size: calc(15px + (24 - 15) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
+		@include _screen-960 {
+			font-size: 2.2rem;
+		}
+
+		@include _screen-490 {
+			font-size: 1.8rem;
+		}
+
+		@include _screen-375 {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+@keyframes shaking {
+	0% {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(5px);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+	75% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+// -----------------------------------------------------------------------------
+@keyframes shake {
+	10%,
+	90% {
+		transform: translateX(-0.5px);
+	}
+	20%,
+	80% {
+		transform: translateX(1px);
+	}
+	30%,
+	50%,
+	70% {
+		transform: translateX(-2px);
+	}
+	40%,
+	60% {
+		transform: translateX(2px);
+	}
+}
+
+// todo --------------------------- Chunk --------------------------------------
+
+// todo --------------------------- Pages --------------------------------------
+
+// todo --------------------------- layout -------------------------------------
+
+// todo -------------------------- Sections ------------------------------------

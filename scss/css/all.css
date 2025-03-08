@@ -1,0 +1,41 @@
+@charset "UTF-8";
+:root {
+  --convas-line-color: blueviolet;
+  --anchor-color: #85cbce;
+  --clip: left center;
+  --size: 0;
+  --background-thumb: #2b3769;
+  --scrollbar-thumb-bgcolor: #757575;
+  --shadow-size: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
+  --stripe-width: 10px;
+  --nav-marker-border: #3b8686;
+  --sidebar-width: 28.5rem;
+  --duration: 0.3s;
+  --button-size: 4rem;
+  --mob-expanded-width: 320px;
+  --mob-collapsed-width: 4rem;
+}
+
+.masked-input {
+  color: transparent; /* Скрыть текст, пока маска не активна */
+}
+
+.masked-input::-webkit-input-placeholder {
+  color: black; /* Цвет плейсхолдера */
+}
+
+.masked-input::-moz-placeholder {
+  color: black; /* Цвет плейсхолдера */
+}
+
+.masked-input:-ms-input-placeholder {
+  color: black; /* Цвет плейсхолдера */
+}
+
+.masked-input::-ms-input-placeholder {
+  color: black; /* Цвет плейсхолдера */
+}
+
+.masked-input::placeholder {
+  color: black; /* Цвет плейсхолдера */
+}/*# sourceMappingURL=all.css.map */
