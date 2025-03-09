@@ -1,0 +1,60 @@
+@use '../core/all' as *;
+.burger-button {
+	&._open-menu {
+		.burger-button__item {
+			&:nth-child(1) {
+				width: 30px;
+				height: 4px;
+				transform: rotate(-45deg) translate(-9px, 4px);
+			}
+			&:nth-child(3) {
+				width: 30px;
+				height: 4px;
+				transform: rotate(45deg) translate(4px, 9px);
+			}
+			&:nth-child(2) {
+				transform: translate(60px, 0);
+			}
+
+			&:nth-child(4) {
+				transform: translate(60px, 10px);
+			}
+		}
+	}
+	&__items {
+		cursor: pointer;
+		width: 34px;
+		height: 34px;
+		padding: 7px;
+		display: block;
+		position: relative;
+		overflow: hidden;
+	}
+
+	// .burger-button__item
+	&__item {
+		border-radius: 2px;
+		transition: all 0.7s ease-in-out;
+		height: 11px;
+		width: 11px;
+		display: block;
+		position: absolute;
+		background-color: #5e5bb1;
+
+		&:nth-child(1) {
+			transform: translate(0px, 0px);
+		}
+
+		&:nth-child(2) {
+			transform: translate(13px, 0px);
+		}
+
+		&:nth-child(3) {
+			transform: translate(0px, 13px);
+		}
+
+		&:nth-child(4) {
+			transform: translate(13px, 13px);
+		}
+	}
+}

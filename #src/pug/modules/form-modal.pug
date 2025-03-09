@@ -1,0 +1,34 @@
+.order-place
+	._container
+		._drawer
+			._line
+				._title Оставить заявку 
+				._close-button._close-button
+					i.icon-angles-down-solid
+			._body 
+				form(action="" id="form-order" method="get").form-order.order-place__form
+					._row 
+						._column 
+							._input 
+								input(type="text" id="name" name="name" placeholder="Имя" autoComplete="on" aria-label="Имя заказчика" required="required" ).input
+						._column 
+							._input 
+								input(id="email" name="email" type="text" autoComplete="on" aria-label="Электронная почта" placeholder="Email").input 
+						._column 
+							._input 
+								input(type="text" name="phone" placeholder="Телефон" autoComplete="on" aria-label="Телефон" required="required").input
+					._row
+						textarea(id="message" name="message" placeholder="Сообщение" autoComplete="off" aria-label="Сообщение" required="required")._message 
+					._row
+						._checkbox
+							.checkbox 
+								input(id="form-agreement" name="agreement" type="checkbox")._input
+								label(for="form-agreement")._label
+									span.icon 
+										i.icon-angle-down 
+									span Я согласен с&nbsp;
+										a(href="") условиями предоставления услуг и&nbsp;политикой конфиденциальности  
+					._row 
+						._button 
+							button(form="form-order" aria-label="отправить" type="submit").submit-button.btn-grad
+								span отправить

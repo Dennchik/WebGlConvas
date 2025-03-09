@@ -1,0 +1,29 @@
+extends ../layouts/app_layout
+append link
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
+prepend script
+	script(defer="defer" src="@@webRoot/js/index.min.js")
+	script(defer="defer" src="@@webRoot/js/vendors/runtime.min.js")
+	//- script(defer="defer" src="@@webRoot/js/vendors/anime-vendors.min.js")
+	//- script(defer="defer" src="@@webRoot/js/vendors/swiper-bundle.min.js")
+	//- script(defer="defer" src="@@webRoot/js/vendors/react-vendors.min.js")
+block title
+	- var text='Portfolio "Александр Всаильев"'
+
+block header 
+	header.page__header
+		include ../layouts/header
+block main-content
+	section.main-content__sections
+		include ../section/section-slide
+	section.main-content__sections
+		//- include ../section/section-intro
+	section.main-content__sections
+		//- include ../section/section-project
+		//- section.main-content__footer
+			include ../layouts/footer 
+block content-hidden
+	//- include ../chunks/content-hidden
+block project-list
+	//- aside.main-content__project-list
+		include ../assets/project-list

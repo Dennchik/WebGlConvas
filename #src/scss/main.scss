@@ -1,0 +1,56 @@
+//todo ---------------------------- Core ---------------------------------------
+@use 'core/all.scss' as *;
+// todo --------------------------- Modules ------------------------------------
+@use 'modules/preloader';
+// @use 'modules/parallax';
+// todo --------------------------- Assets -------------------------------------
+// @use 'assets/burger-button';
+// @use 'assets/burger-menu';
+// todo --------------------------- Chunks -------------------------------------
+
+// todo --------------------------- Fonts --------------------------------------
+@use 'core/_fonts.scss';
+//todo  --------------------------- Icon Fonts ---------------------------------
+@use 'core/_iconfonts.scss';
+// todo --------------------------- Plugins ------------------------------------
+@use 'assets/swiper';
+// todo --------------------------- layout -------------------------------------
+@use 'layouts/bem-block';
+@use 'layouts/header';
+@use 'layouts/footer';
+@use 'layouts/page';
+// todo -------------------------- Section -------------------------------------
+
+// todo ------------------------ Default fonts ---------------------------------
+// &display=swap&subset=cyrillic-ext
+// @import url('https://fonts.googleapis.com/css?family=Shantell+Sans:300,regular,500,600,700,800&display=swap&subset=cyrillic-ext');
+// @import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap&subset=cyrillic-ext');
+// @import url('https://fonts.googleapis.com/css?family=Amatic+SC:regular,700&display=swap&subset=cyrillic-ext');
+// @import url('https://fonts.googleapis.com/css?family=Sofia+Sans+Extra+Condensed:regular,500,600,700,800,900&display=swap&subset=cyrillic-ext');
+
+// #region
+// todo ---------------------------- Style -------------------------------------
+.wrapper {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	height: 100%;
+}
+
+[class*='_container'] {
+	max-width: $maxWidth;
+	box-sizing: content-box;
+	margin: 0 auto;
+	padding: 0 4rem;
+	@include screen-1140 {
+		padding: 0 2rem;
+	}
+}
+
+[class*='icon-'] {
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}

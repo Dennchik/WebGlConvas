@@ -1,0 +1,222 @@
+@use '../core/all' as *;
+.bg-section {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	height: 100vh;
+	width: 100%;
+	height: 100vh;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+
+	filter: grayscale(1);
+
+	// .bg-section__image
+	&__image {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: $black-color;
+
+		img {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			opacity: 0.2;
+			object-fit: cover;
+			object-position: top center;
+			will-change: transform;
+		}
+	}
+}
+
+.page {
+	overflow: hidden;
+	width: 100%;
+
+	// .page__header
+	&__header {
+		position: fixed;
+		z-index: 11;
+		top: 0;
+
+		left: 0;
+		width: 100%;
+		height: 8rem;
+	}
+
+	// .page__main-content
+	&__main-content {
+		position: relative;
+		z-index: 8;
+		width: 100%;
+		height: 100%;
+		inset: 0;
+	}
+
+	// .page__modal-image
+	&__modal-image {
+		border-top: 1px solid $gray;
+		border-bottom: 1px solid $gray;
+		position: fixed;
+		overflow: hidden;
+		will-change: transform, opacity; /* Оптимизация для трансформаций */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 0; /* Изначальная ширина */
+		height: 0; /* Изначальная высота */
+		top: 50%; /* Центрирование по вертикали */
+		left: 50%; /* Центрирование по горизонтали */
+		transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+		opacity: 0; /* Изначально невидимая */
+		animation: none; /* Без анимации по умолчанию */
+		transform-origin: center center; /* Точка трансформации - центр */
+		transition:
+			transform 1.75s ease,
+			opacity 1.75s ease; /* Плавные переходы */
+		background: linear-gradient(
+			-45deg,
+			rgba(32, 25, 60, 70%),
+			rgba(2, 1, 1, 0.7) 70%
+		);
+
+		// backdrop-filter: blur(10px);
+		&._show {
+			animation: expand-height 2s ease forwards; /* Запуск анимации */
+			opacity: 1; /* Сделать видимой */
+			border-width: 1px;
+
+			.modal__image {
+				opacity: 1;
+			}
+		}
+
+		&._hide {
+			animation: collapse-width 2s ease forwards; /* Обратная анимация */
+			opacity: 0; /* Исчезновение */
+		}
+
+		&._complete {
+			border: none;
+		}
+	}
+}
+
+.main-content {
+	// .main-content__about-page
+	&__about-page {
+		position: relative;
+		height: 100%;
+	}
+
+	// . main-content__about
+	&__about {
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		width: 100%;
+		min-height: 100vh;
+		height: 100%;
+	}
+
+	// .main-content__sections
+	&__sections {
+		position: relative;
+		// background: #050505;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+
+		&:first-child {
+			// background-color: transparent;
+		}
+	}
+
+	// .main-content__footer
+	&__footer {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		mix-blend-mode: difference;
+		background-color: $black-color;
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-size: 111% 200%;
+			background-position: 0 0;
+			@extend .gradient-footer;
+			box-shadow: 0 -7px 10px $black-color;
+			backdrop-filter: blur(22px);
+		}
+	}
+
+	// .main-content__project-list
+	&__project-list {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 13;
+		pointer-events: none;
+		transition: all 0.7s ease-in-out;
+	}
+}
+
+@keyframes fadeInBackground {
+	0% {
+		background: rgb(28, 21, 63);
+	}
+	100% {
+		background: $black-color;
+	}
+}
+
+/* Анимация открытия */
+@keyframes expand-height {
+	0% {
+		width: 0;
+		height: 2px; /* Тонкая полоска */
+		transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+	}
+	50% {
+		width: 100%; /* Полоса расширяется по ширине */
+		height: 2px; /* Пока остаётся тонкой */
+		transform: translate(-50%, -50%) scaleX(1); /* Расширение по ширине */
+	}
+	100% {
+		width: 100%; /* Полная ширина */
+		height: 100%; /* Полная высота */
+		transform: translate(-50%, -50%) scaleX(1); /* Завершение */
+	}
+}
+
+/* Анимация закрытия */
+@keyframes collapse-width {
+	0% {
+		width: 100%; /* Полная ширина */
+		height: 100%; /* Полная высота */
+		transform: translate(-50%, -50%) scaleX(1); /* Полное состояние */
+	}
+	50% {
+		width: 100%; /* Полоса остаётся широкой */
+		height: 2px; /* Высота уменьшается до тонкой линии */
+		transform: translate(-50%, -50%) scaleX(1); /* Ширина сохраняется */
+	}
+	100% {
+		width: 0; /* Полоса исчезает по ширине */
+		height: 2px; /* Тонкая полоска */
+		transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+	}
+}

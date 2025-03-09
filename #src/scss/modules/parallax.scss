@@ -1,0 +1,57 @@
+@use '../core/all' as *;
+
+.parallax {
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	height: 100vh;
+	min-height: 100%;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+
+	// .parallax__image
+	&__image {
+		// position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: $black-color;
+
+		img {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			opacity: 0.2;
+			object-fit: cover;
+			object-position: top center;
+			will-change: transform;
+		}
+	}
+
+	&__image-achieve {
+		filter: grayscale(91%);
+	}
+
+	// .parallax__image-services
+	&__image-services {
+		object-position: bottom center;
+	}
+
+	&__services-company {
+		filter: grayscale(1);
+		opacity: 0.1 !important;
+	}
+
+	picture {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		will-change: transform;
+	}
+}

@@ -1,0 +1,37 @@
+.section-slide 
+	._body._swiper  
+		._slide 
+			._image._img
+				img(src="@@webRoot/img/slides/sydney.jpg" alt="image")
+			._content 
+				._title
+					h1 Sydney Australia 	
+		._slide 
+			._image._img
+				img(src="@@webRoot/img/slides/adelaide.jpg" alt="image")
+			._content 
+				._title
+					h1 Adelaide Australia 	
+		._slide 
+			._image._img
+				img(src="@@webRoot/img/slides/brisbane.jpg" alt="image")
+			._content 
+				._title
+					h1 Brisbane Australia 	
+		._slide 
+			._image._img
+				img(src="@@webRoot/img/slides/melbourne.jpg" alt="image")
+			._content 
+				._title
+					h1 Melbourne Australia 	
+	._pagination
+		.wave-container
+			.wave-container__body
+				canvas.wave-container__canvas#myCanvas
+				.pagination
+					._link.ctx(href="#" data-index="0") Sydney
+					._link.ctx(href="#" data-index="1") Adelaide
+					._link.ctx(href="#" data-index="2") Brisbane
+					._link.ctx(href="#" data-index="3") Melbourne
+					//- .wave-container__link.ctx(href="#" data-index="4") Точка 5
+					//- .wave-container__link.ctx(href="#" data-index="5") Точка 6

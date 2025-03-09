@@ -1,0 +1,271 @@
+@use '../core/all' as *;
+
+.header {
+	position: relative;
+	width: 100%;
+	z-index: 9;
+	background: transparent;
+	display: flex;
+	align-items: center;
+
+	&::before {
+		z-index: 7;
+		opacity: 0;
+		content: '';
+		position: absolute;
+		height: 8rem;
+		width: 100%;
+		background-size: 111% 200%;
+		background-position: 0 0;
+		transition: opacity 0.5s ease-in-out;
+		animation: fadeOutGradient 0.5s ease-in-out alternate-reverse;
+		@extend .gradient-header;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 1px;
+		transition: all 0.7s ease-in-out;
+		@extend .gradient-border-bottom;
+	}
+
+	&.with-border {
+		@extend .box-shadow;
+
+		&::before {
+			animation: fadeInGradient 1.9s ease-in-out forwards;
+			opacity: 1;
+		}
+
+		&::after {
+			z-index: 9;
+			width: 100%;
+		}
+	}
+
+	// .header__container
+	&__container {
+		width: 100%;
+	}
+
+	// .header__burger-menu
+	&__burger-button {
+		margin-left: 1.6rem;
+		@include min-768 {
+			display: none;
+		}
+	}
+
+	// .header__content
+	&__content {
+		position: relative;
+		width: 100%;
+		z-index: 8;
+		height: 8rem;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		justify-content: space-between;
+	}
+
+	// .header__logo-wrpper
+	&__logo-wrpper {
+		display: flex;
+		align-items: center;
+
+		@include screen-425 {
+			.header__text {
+				span {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+
+	// .header__column
+	&__column {
+		height: 100%;
+
+		&:nth-child(1) {
+			display: flex;
+			align-items: center;
+		}
+
+		&:nth-child(2) {
+			transform: translateY(7px);
+		}
+
+		.icon-home {
+			color: gray;
+			&::before {
+				font-size: 22px;
+			}
+		}
+	}
+
+	// .header__icon-home
+	&__icon-home {
+		margin-right: 1.6rem;
+		._icon {
+			transition: color 0.4s ease-in-out;
+		}
+		&:hover {
+			._icon {
+				color: #ff8040;
+				@extend .text-shadow-pink;
+			}
+		}
+	}
+
+	// .header__logo
+	&__logo {
+		width: 50px;
+		height: 53px;
+		opacity: 0.9;
+
+		@include screen-690 {
+			width: 40px;
+			height: 43px;
+		}
+	}
+
+	// .header__text
+	&__text {
+		margin-left: -10px;
+		text-transform: uppercase;
+		white-space: nowrap;
+		display: flex;
+		align-items: flex-end;
+
+		span {
+			opacity: 0.7;
+			z-index: -1;
+
+			font: {
+				size: 2.2rem;
+				weight: 400;
+			}
+
+			@extend .text-shadow;
+
+			@include screen-960 {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	// .header__menu-items
+	&__menu-items {
+		user-select: none;
+		display: flex;
+		transition: all 0.4s ease 0s;
+		text-transform: uppercase;
+		align-items: center;
+	}
+
+	// .header__item
+	&__item {
+		position: relative;
+
+		&:not(:last-child) {
+			margin-right: 2rem;
+		}
+
+		&:hover {
+			.icon-home {
+				&::before {
+					transition: all 0.4s ease 0s;
+					color: $luminescent-orange;
+					@extend .text-shadow-pink;
+				}
+			}
+		}
+
+		.icon-home {
+			&::before {
+				transition: all 0.4s ease 0s;
+				@extend .text-shadow;
+			}
+		}
+	}
+
+	&__link-key {
+		font-weight: 300;
+
+		&:not(:first-child) {
+			opacity: 1;
+		}
+	}
+}
+
+.el-community {
+	display: flex;
+	align-items: center;
+
+	// .el-community__contact
+	&__contact {
+		display: flex;
+		align-items: center;
+		transition: all 0.4s ease-in-out;
+		margin-left: 1.6rem;
+
+		&:hover {
+			.icon-contacts {
+				color: $luminescent-orange;
+				@extend .text-shadow-pink;
+			}
+		}
+	}
+
+	.icon-contacts {
+		font-size: 4.4rem;
+		margin-right: 1rem;
+		transition: all 0.4s ease-in-out;
+		color: $gray;
+
+		@include screen-425 {
+			margin-right: 0;
+		}
+
+		@include screen-690 {
+			font-size: 34px;
+		}
+	}
+
+	// .el-community__content
+	&__content {
+		color: #d4d4d4;
+		line-height: 100%;
+		@extend .text-shadow;
+
+		@include screen-425 {
+			display: none;
+		}
+	}
+
+	// .el-community__title
+	&__title {
+		text-transform: uppercase;
+		white-space: nowrap;
+
+		@include screen-490 {
+			display: none;
+		}
+	}
+}
+
+@keyframes fadeOutGradient {
+	100% {
+		background-position: 100% 0;
+	}
+}
+
+@keyframes fadeInGradient {
+	100% {
+		background-position: 100% 0;
+	}
+}
